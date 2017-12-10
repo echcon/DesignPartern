@@ -101,7 +101,7 @@ Với ví dụ ở dạng mẫu trên, chúng ta vẫn chưa thật sự hiểu 
     $chien = new Employee('ChienVM');
     $thao = new Employee('ThaoDV');
 
-    // Gán nhân viên vào nhóm fontend
+    // Gán nhân viên vào nhóm frontend
     $frontend->add($thong);
     $frontend->add($chien);
     $frontend->add($thao);
@@ -113,7 +113,7 @@ Với ví dụ ở dạng mẫu trên, chúng ta vẫn chưa thật sự hiểu 
     $frontend->completeTask('Xây dựng website');
 
     // Chuyển Taylor Otwell sang nhóm backend
-    $frontend->remove($taylor);
+    $frontend->remove($thao);
 
     // Xóa các đối tượng
     unset($frontend, $thong, $chien, $thao);
