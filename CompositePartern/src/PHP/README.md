@@ -121,3 +121,4 @@ Với ví dụ ở dạng mẫu trên, chúng ta vẫn chưa thật sự hiểu 
 </body>
 </html>
 ```
+Áp dụng Composite Pattern giúp chúng ta nhìn nhận Nhóm cũng giống như Nhân viên, và các xử lý trên Nhóm và Nhân viên là tương tự nhau.
