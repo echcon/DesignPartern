@@ -11,3 +11,32 @@ abstract class FormComponent {
 	abstract function showError();  
 }
 ```
+Lớp trừu tượng ở trên có sử dụng type hinting (cách xác định dạng dữ liệu cho tham số), hai phương thức đầu chính là cách mà Composite pattern sử dụng. Mỗi lớp con sẽ kế thừa từ lớp cha và nó cần phải định nghĩa các phương thức trìu tượng được implement từ lớp cha trìu tượng. Ví dụ:  
+
+```
+class Form extends FormComponent {
+  private $_elements = array();
+  function add(FormComponent $obj) {
+    $this->_elements[] = $obj;
+  }
+  function display() {
+    // Display the entire form.
+  }
+}
+class FormElement extends FormComponent {
+  function add(FormComponent $obj) {
+    return $obj; // Or false.
+  }
+  function display() {
+    // Display the element.
+  }
+}
+```
+**Class Form** định nghĩa phương thức **add()** được implement từ **FormConponent**, nó cho phép bạn thêm thành phần vào form:  
+
+```
+$form = new Form();
+$email = new FormElement();
+$form->add($email);
+```
+Chú ý là **FormElement** cũng định nghĩa phương thức **add()**, nhưng phương thức này không làm gì cả, vì chúng ta không cần thêm thành phần form vào một thành phần form. Thay vào đó, phương thức **add()** này trả về đối tượng được thêm vào hoặc trả về một giá trị hoặc bung ra một lỗi.
