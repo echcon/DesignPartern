@@ -1,6 +1,6 @@
 # Python 3.6
 ## Source
-import abc
+'''import abc
 class Component(metaclass=abc.ABCMeta):
     """
     Declare the interface for objects in the composition.
@@ -56,4 +56,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    main()'''
